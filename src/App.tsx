@@ -29,7 +29,7 @@ function App() {
         borderBottom: '1px solid var(--read-docs)',
         marginBottom: '2rem'
       }}>
-        <div style={{ flex: 1 }}>
+        <div>
           <h1 style={{ margin: 0, fontSize: '1.5rem' }}>The Orchestration Layer</h1>
           <p style={{ margin: '0.5rem 0 0 0', fontSize: '1rem', color: 'var(--read-docs)' }}>A place for ideas, projects, and thoughts.</p>
         </div>
