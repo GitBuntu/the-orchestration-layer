@@ -37,6 +37,18 @@
   padding: 2em;
 }
 
+/* Paper-specific card styling */
+.paper .card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--button-bg);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  padding: 2em;
+  text-align: left;
+}
+
 .read-the-docs {
-  color: #888;
+  color: var(--read-docs);
 }
