@@ -1,5 +1,5 @@
 {
-  "name": "the-orchestration-layer",
+  "homepage": "https://gitbuntu.github.io/the-orchestration-layer/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,11 +8,16 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "generate-manifest": "node scripts/generate-manifest.cjs",
+    "prebuild": "npm run generate-manifest",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "front-matter": "^4.0.2",
+    "gray-matter": "^4.0.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.4"
   },
   "devDependencies": {

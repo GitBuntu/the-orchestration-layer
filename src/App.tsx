@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Portfolio from './Portfolio.tsx'
+import BlogList from './components/BlogList'
+import BlogPost from './components/BlogPost'
 
 function App() {
   const [theme, setTheme] = useState('paper')
@@ -50,6 +52,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/tag/:tag" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </>
   )
