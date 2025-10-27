@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import frontMatter from 'front-matter'
+import { resolveAsset } from '../lib/resolveAsset'
 
 interface BlogPost {
   title: string
@@ -15,7 +16,7 @@ const BlogPost = () => {
 
   useEffect(() => {
     async function fetchPost() {
-      const res = await fetch(`/the-orchestration-layer/src/posts/${slug}.md`)
+      const res = await fetch(resolveAsset(`src/posts/${slug}.md`))
       const md = await res.text()
       const { attributes, body } = frontMatter(md) as { attributes: BlogPost; body: string }
       setPost({ title: attributes.title, date: attributes.date, content: body })

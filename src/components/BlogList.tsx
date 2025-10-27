@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { resolveAsset } from '../lib/resolveAsset';
 
 interface BlogPost {
   title: string;
@@ -16,7 +17,7 @@ const BlogList: React.FC = () => {
 
   useEffect(() => {
     async function loadLocalPosts() {
-      const res = await fetch('/the-orchestration-layer/src/posts/manifest.json');
+      const res = await fetch(resolveAsset('src/posts/manifest.json'));
       const manifest = await res.json();
       setPosts(manifest);
     }
