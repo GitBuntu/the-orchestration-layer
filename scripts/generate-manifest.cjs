@@ -13,7 +13,7 @@ const posts = files.map(filename => {
   const { attributes } = fm(content);
   return {
     title: attributes.title || filename,
-    date: attributes.date || '',
+    date: (attributes.date || '').toString().slice(0, 10), // Always YYYY-MM-DD
     slug: attributes.slug || filename.replace(/\.md$/, ''),
     filename,
     tags: attributes.tags || [],

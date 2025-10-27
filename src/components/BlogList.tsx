@@ -61,7 +61,7 @@ const BlogList: React.FC = () => {
               <h2 style={{ fontSize: '1.25rem', margin: 0, fontWeight: 500, textAlign: 'left' }}>{post.title}</h2>
             </Link>
             <p style={{ margin: '0.5rem 0 0 0', color: 'var(--read-docs)', fontSize: '0.95rem', textAlign: 'left' }}>
-              {String(post.date).split(' ')[0]}
+              {String(post.date)}
             </p>
           </li>
         ))}
