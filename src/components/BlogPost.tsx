@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import frontMatter from 'front-matter'
 import { resolveAsset } from '../lib/resolveAsset'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface BlogPost {
   title: string
@@ -35,7 +37,29 @@ const BlogPost = () => {
       </nav>
       <h2>{post.title}</h2>
       <p>{String(post.date).split(' ')[0] + ' ' + String(post.date).split(' ')[1] + ' ' + String(post.date).split(' ')[2] + ' ' + String(post.date).split(' ')[3]}</p>
-      <ReactMarkdown>{post.content}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          h1: ({children}) => <h1 style={{ fontSize: '1.5em' }}>{children}</h1>,
+          code({ node, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '')
+            return match ? (
+              <SyntaxHighlighter
+                style={vscDarkPlus as any}
+                language={match[1]}
+                PreTag="div"
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            )
+          }
+        }}
+      >
+        {post.content}
+      </ReactMarkdown>
     </div>
   )
 }

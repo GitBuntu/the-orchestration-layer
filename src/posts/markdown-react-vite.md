@@ -5,7 +5,7 @@ slug: markdown-react-vite
 tags: [react, typescript]
 ---
 
-# Building a Modern Markdown Blog with React, Typescript & Vite
+# Building a Markdown Blog with React, Typescript & Vite on Github Pages
 
 I wanted a fast, modern, and automated way to publish a blog using React, markdown, and GitHub Pages. This post is a step-by-step summary of my journey, including all the lessons learned and solutions to common pitfalls. If you’re building something similar, I hope this helps you avoid the headaches and get your blog online with confidence.
 
@@ -156,5 +156,23 @@ This ensures the manifest is always up-to-date before each build.
 - Automate deployment for reliability.
 - Link to repo: https://github.com/GitBuntu/the-orchestration-layer
 
+### Prompt and Context Engineering
+Throughout this project, I leveraged advanced prompt engineering techniques to guide AI assistants in generating accurate, production-ready code. By providing detailed context, breaking down complex tasks, and iterating on feedback, I ensured that every component—from Vite configuration to syntax highlighting—was implemented correctly. This approach minimized errors, accelerated development, and demonstrated the power of precise communication with AI tools for modern web development.
+
+Here are two standout prompts that drove key improvements:
+
+1. **Adding Code Examples**: "Extract code block used to fetch and display the markdown file and add it to the blog post. Use `react-markdown` for rendering posts is just too vague."  
+   This led to adding detailed, runnable code snippets for markdown rendering, front-matter parsing, manifest generation, and build integration, transforming vague descriptions into practical, copy-pasteable solutions.
+
+2. **Adding Syntax Highlighting**: "There are code blocks in markdown. This works currently. Ensure all code blocks in markdown have a black background and the syntax has color highlighting."  
+   This led to integrating `react-syntax-highlighter` with the `vscDarkPlus` theme, resulting in professional-looking code blocks with full syntax coloring.
+
+## References
+
+This blog post was created with the assistance of various online resources and documentation. Full disclosure: I referenced a list of sources to help compile and refine the content for accuracy and completeness.
+
+https://www.youtube.com/watch?v=uXiwgO_p0Yg
+https://www.youtube.com/watch?v=hn1IkJk24ow
+
 ---
-This workflow helps millions of developers build and deploy modern markdown blogs with React, Typescript, and Vite—avoiding common pitfalls and shipping with confidence.
+I am certain this workflow will help you build and deploy modern markdown blogs with React, Typescript, and Vite on Github Pages — avoiding common pitfalls and shipping with confidence.
