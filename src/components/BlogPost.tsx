@@ -35,7 +35,6 @@ const BlogPost = () => {
           ← Back to Blog
         </Link>
       </nav>
-      <h2>{post.title}</h2>
       <p>{String(post.date).split(' ')[0] + ' ' + String(post.date).split(' ')[1] + ' ' + String(post.date).split(' ')[2] + ' ' + String(post.date).split(' ')[3]}</p>
       <ReactMarkdown
         components={{

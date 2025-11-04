@@ -33,11 +33,11 @@ function App() {
       }}>
         <div>
           <h1 style={{ margin: 0, fontSize: '1.5rem' }}>The Orchestration Layer</h1>
-          <p style={{ margin: '0.5rem 0 0 0', fontSize: '1rem', color: 'var(--read-docs)' }}>A place for ideas, projects, and thoughts.</p>
+          <p style={{ margin: '0.5rem 0 0 0', fontSize: '1rem', color: 'var(--read-docs)' }}>Building AI MVPs on Azure.</p>
         </div>
         <nav style={{ margin: '0 auto', display: 'flex', gap: '1rem' }}>
           <Link to="/" style={{ textDecoration: 'none', color: 'var(--text-color)' }}>Home</Link>
-          <Link to="/portfolio" style={{ textDecoration: 'none', color: 'var(--text-color)' }}>Portfolio</Link>
+          <Link to="/blog" style={{ textDecoration: 'none', color: 'var(--text-color)' }}>Blog</Link>
         </nav>
         <button onClick={toggleTheme} style={{
           background: 'none',
