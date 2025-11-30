@@ -1,5 +1,17 @@
 [
   {
+    "title": "Building Callistra: Part 1 - From Concept to Local Testing with Azure Functions",
+    "date": "Sun Nov 30",
+    "slug": "article-1-local-harness",
+    "filename": "article-1-local-harness.md",
+    "tags": [
+      "azure",
+      "azure-functions",
+      "csharp",
+      "entity-framework"
+    ]
+  },
+  {
     "title": "Building a Markdown Blog with React, Typescript & Vite on Github Pages",
     "date": "Mon Oct 27",
     "slug": "markdown-react-vite",
