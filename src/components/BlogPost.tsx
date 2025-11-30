@@ -5,6 +5,7 @@ import frontMatter from 'front-matter'
 import { resolveAsset } from '../lib/resolveAsset'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import rehypeRaw from 'rehype-raw'
 
 interface BlogPost {
   title: string
@@ -37,6 +38,7 @@ const BlogPost = () => {
       </nav>
       <p>{String(post.date).split(' ')[0] + ' ' + String(post.date).split(' ')[1] + ' ' + String(post.date).split(' ')[2] + ' ' + String(post.date).split(' ')[3]}</p>
       <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
         components={{
           h1: ({children}) => <h1 style={{ fontSize: '1.5em' }}>{children}</h1>,
           code({ node, className, children, ...props }) {

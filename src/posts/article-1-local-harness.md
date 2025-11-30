@@ -15,6 +15,13 @@ Healthcare outreach is critical but resource-intensive. What if we could automat
 
 In this two-part series, I'll walk through the complete development journey, from initial architecture decisions to placing real phone calls via Azure Communication Services. Part 1 focuses on establishing the foundation: database design, Azure Functions setup, and local testing with our custom harness.
 
+## Demo: Local Harness in Action
+
+<video width="100%" controls style="max-width: 800px; margin: 2rem auto; display: block; border-radius: 8px;">
+  <source src="/the-orchestration-layer/callistrapt1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Architecture Overview
 
 Callistra follows a clean, layered architecture built on Azure Functions v4 with .NET 8:
