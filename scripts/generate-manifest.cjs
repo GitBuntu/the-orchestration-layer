@@ -11,9 +11,18 @@ const posts = files.map(filename => {
   const filePath = path.join(postsDir, filename);
   const content = fs.readFileSync(filePath, 'utf-8');
   const { attributes } = fm(content);
+  
+  // Handle date properly - if it's a Date object, convert to ISO string
+  let dateStr = '';
+  if (attributes.date instanceof Date) {
+    dateStr = attributes.date.toISOString().slice(0, 10); // YYYY-MM-DD
+  } else if (attributes.date) {
+    dateStr = String(attributes.date).slice(0, 10);
+  }
+  
   return {
     title: attributes.title || filename,
-    date: (attributes.date || '').toString().slice(0, 10), // Always YYYY-MM-DD
+    date: dateStr,
     slug: attributes.slug || filename.replace(/\.md$/, ''),
     filename,
     tags: attributes.tags || [],

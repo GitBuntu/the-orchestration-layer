@@ -1,7 +1,7 @@
 [
   {
     "title": "Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence",
-    "date": "Tue Dec 02",
+    "date": "2025-12-02",
     "slug": "authpilot-fax-processing",
     "filename": "authpilot-fax-processing.md",
     "tags": [
@@ -15,7 +15,7 @@
   },
   {
     "title": "Building Callistra: Part 1 - From Concept to Local Testing with Azure Functions",
-    "date": "Sun Nov 30",
+    "date": "2025-11-30",
     "slug": "article-1-local-harness",
     "filename": "article-1-local-harness.md",
     "tags": [
@@ -27,7 +27,7 @@
   },
   {
     "title": "Building a Markdown Blog with React, Typescript & Vite on Github Pages",
-    "date": "Mon Oct 27",
+    "date": "2025-10-27",
     "slug": "markdown-react-vite",
     "filename": "markdown-react-vite.md",
     "tags": [
