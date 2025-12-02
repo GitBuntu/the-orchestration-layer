@@ -20,5 +20,8 @@ const posts = files.map(filename => {
   };
 });
 
+// Sort posts by date in descending order (newest first)
+posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 fs.writeFileSync(manifestPath, JSON.stringify(posts, null, 2));
 console.log(`Manifest written to ${manifestPath}`);

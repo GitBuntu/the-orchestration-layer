@@ -6,6 +6,7 @@ import { resolveAsset } from '../lib/resolveAsset'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 
 interface BlogPost {
   title: string
@@ -38,9 +39,18 @@ const BlogPost = () => {
       </nav>
       <p>{String(post.date).split(' ')[0] + ' ' + String(post.date).split(' ')[1] + ' ' + String(post.date).split(' ')[2] + ' ' + String(post.date).split(' ')[3]}</p>
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
           h1: ({children}) => <h1 style={{ fontSize: '1.5em' }}>{children}</h1>,
+          img: ({src, alt, ...props}) => (
+            <img 
+              src={src ? resolveAsset(src) : ''} 
+              alt={alt} 
+              style={{ maxWidth: '100%', height: 'auto' }}
+              {...props} 
+            />
+          ),
           code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             return match ? (
