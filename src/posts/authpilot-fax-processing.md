@@ -1,9 +1,9 @@
----
+----
 title: "Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence"
 date: 2025-12-02
 slug: authpilot-fax-processing
 tags: [azure, azure-functions, document-intelligence, mongodb, csharp, healthcare]
----
+----
 
 # Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence
 
@@ -338,34 +338,69 @@ func start
 
 Upload a PDF to your `faxes` container and watch the magic happen!
 
-## Key Learnings
+## Demo: AuthPilot in Action
 
-### 1. Separate Training from Production
+<video width="100%" controls style="max-width: 800px; margin: 2rem auto; display: block; border-radius: 8px;">
+  <source src="/the-orchestration-layer/FunctionTest.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-Document Intelligence training creates metadata files. Keep training data in a separate container to avoid triggering your production function with `.ocr.json` files.
+## Infrastructure as Code Deployment
 
-### 2. Handle Blob Trigger Idempotency
+AuthPilot requires provisioning several Azure resources. Use Infrastructure as Code to define and deploy them consistently:
 
-Blob triggers can fire multiple times for the same file (restarts, scaling events). Always check if a document was already processed before creating new database records.
+### Required Azure Resources
 
-### 3. Support Multiple Formats
+| Resource | Type | Purpose | IaC Template |
+|----------|------|---------|--------------|
+| **Blob Storage** | `Microsoft.Storage/storageAccounts` | Stores incoming faxes and training data | Configure containers: `faxes`, `training-data` |
+| **Azure Functions** | `Microsoft.Web/sites` | Executes blob-triggered processing pipeline | Runtime: .NET 9 isolated, v4 |
+| **Document Intelligence** | `Microsoft.CognitiveServices/accounts` | Custom model for field extraction | SKU: `S0` or higher |
+| **MongoDB Atlas** | External managed service | Stores extraction results and metadata | Connection via MongoDB driver, secured with IP whitelist |
+| **Application Insights** | `Microsoft.Insights/components` | Monitoring and diagnostics | Linked to Functions app |
 
-Healthcare faxes come as PDF, TIFF, and TIF. Document Intelligence supports all of these - make sure your function does too.
+### Key IaC Patterns
 
-### 4. Stream-Based Processing
+**1. Separate Storage Accounts for Training and Production**
+- `storageAccounts/training` - Contains labeled training data and generated metadata (`.ocr.json`, `fields.json`)
+- `storageAccounts/production` - Contains incoming faxes and processed results
+- This separation prevents training metadata from triggering the production function
 
-Send document streams directly to Document Intelligence rather than using URLs. This avoids CORS issues and keeps your blob container private.
+**2. Document Intelligence Binding**
+Ensure the managed identity of your Functions app has `Cognitive Services User` role on the Document Intelligence resource.
 
-### 5. Graceful Error Handling
+**3. MongoDB Atlas Connection Security**
+- Store connection string in Azure Key Vault with restricted database user credentials
+- Reference via `@Microsoft.KeyVault(SecretUri=...)` in app settings
+- Configure MongoDB Atlas IP whitelist to allow only your Azure Functions outbound IPs
+- Use network peering or VPN for production workloads requiring higher isolation
+- Enable MongoDB Atlas audit logging for compliance tracking
 
-Mark failed documents with status and error message rather than throwing exceptions. This allows for debugging and retry logic downstream.
+### Deployment Checklist
+
+- [ ] Create separate resource groups for training and production
+- [ ] Provision storage accounts with appropriate access tiers
+- [ ] Train Document Intelligence model in staging environment
+- [ ] Deploy Functions app with correct runtime version and permissions
+- [ ] Configure blob trigger binding to exclude training data patterns
+- [ ] Enable Application Insights diagnostics
+- [ ] Set up monitoring alerts for failed documents and function errors
+- [ ] Test blob-triggered idempotency with retry scenarios
 
 ## What's Next
 
-AuthPilot provides the foundation for automated prior authorization processing. The next step is to train the model with more faxes to improve confidence.
+With AuthPilot's architecture defined, the next phase is deployment to Azure. This involves:
+
+1. **Bicep Template Development** - Create modular Bicep files for all resources (storage, functions, Document Intelligence, Key Vault)
+2. **CI/CD Pipeline Setup** - Configure GitHub Actions to automatically deploy on push to main branch
+3. **Document Intelligence Model Training** - Use labeled faxes to train your custom extraction model in the staging environment
+4. **End-to-End Testing** - Deploy to production environment and process real faxes through the complete pipeline
+5. **Monitoring & Alerting** - Configure Application Insights dashboards and set thresholds for failed documents and performance metrics
+
+Refer to the [Infrastructure as Code Deployment](#infrastructure-as-code-deployment) section for resource definitions and the deployment checklist.
 
 ## Code Repository
 
 The complete AuthPilot codebase is available on GitHub: [github.com/GitBuntu/authpilot](https://github.com/GitBuntu/authpilot)
 
----
+----
