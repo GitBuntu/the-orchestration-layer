@@ -1,5 +1,19 @@
 [
   {
+    "title": "Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence",
+    "date": "2025-12-02",
+    "slug": "authpilot-fax-processing",
+    "filename": "authpilot-fax-processing.md",
+    "tags": [
+      "azure",
+      "azure-functions",
+      "document-intelligence",
+      "mongodb",
+      "csharp",
+      "healthcare"
+    ]
+  },
+  {
     "title": "Building Callistra: Part 1 - From Concept to Local Testing with Azure Functions",
     "date": "2025-11-30",
     "slug": "article-1-local-harness",
@@ -10,13 +24,6 @@
       "csharp",
       "entity-framework"
     ]
-  },
-  {
-    "title": "authpilot-fax-processing.md",
-    "date": "",
-    "slug": "authpilot-fax-processing",
-    "filename": "authpilot-fax-processing.md",
-    "tags": []
   },
   {
     "title": "Building a Markdown Blog with React, Typescript & Vite on Github Pages",
