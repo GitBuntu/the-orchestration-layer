@@ -2,7 +2,7 @@
 title: "Building Callistra: Part 1 - From Concept to Local Testing with Azure Functions"
 date: 2025-11-30
 slug: article-1-local-harness
-tags: [azure, azure-functions, csharp, entity-framework]
+tags: [artificial-intelligence, infrastructure-as-code, azure, azure-functions, csharp, dotnet-core, devops, tutorial, healthcare, cicd, entity-framework]
 ---
 
 # Building Callistra: Part 1 - From Concept to Local Testing with Azure Functions

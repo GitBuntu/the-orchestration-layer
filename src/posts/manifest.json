@@ -5,10 +5,16 @@
     "slug": "authpilot-fax-processing-iac",
     "filename": "authpilot-fax-processing-iac.md",
     "tags": [
+      "artificial-intelligence",
+      "infrastructure-as-code",
       "azure",
       "bicep",
-      "infrastructure-as-code",
-      "lessons-learned"
+      "devops",
+      "lessons-learned",
+      "best-practices",
+      "healthcare",
+      "cicd",
+      "github-actions"
     ]
   },
   {
@@ -17,12 +23,19 @@
     "slug": "authpilot-fax-processing",
     "filename": "authpilot-fax-processing.md",
     "tags": [
+      "artificial-intelligence",
+      "infrastructure-as-code",
+      "devops",
       "azure",
       "azure-functions",
       "document-intelligence",
-      "mongodb",
       "csharp",
-      "healthcare"
+      "dotnet-core",
+      "healthcare",
+      "tutorial",
+      "best-practices",
+      "cicd",
+      "github-actions"
     ]
   },
   {
@@ -31,9 +44,16 @@
     "slug": "article-1-local-harness",
     "filename": "article-1-local-harness.md",
     "tags": [
+      "artificial-intelligence",
+      "infrastructure-as-code",
       "azure",
       "azure-functions",
       "csharp",
+      "dotnet-core",
+      "devops",
+      "tutorial",
+      "healthcare",
+      "cicd",
       "entity-framework"
     ]
   },
@@ -43,8 +63,16 @@
     "slug": "markdown-react-vite",
     "filename": "markdown-react-vite.md",
     "tags": [
+      "artificial-intelligence",
+      "infrastructure-as-code",
+      "devops",
       "react",
-      "typescript"
+      "typescript",
+      "tutorial",
+      "automation",
+      "github-pages",
+      "cicd",
+      "github-actions"
     ]
   }
 ]

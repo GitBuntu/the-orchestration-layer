@@ -2,7 +2,7 @@
 title: "Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence"
 date: 2025-12-02
 slug: authpilot-fax-processing
-tags: [azure, azure-functions, document-intelligence, mongodb, csharp, healthcare]
+tags: [artificial-intelligence, infrastructure-as-code, devops, azure, azure-functions, document-intelligence, csharp, dotnet-core, healthcare, tutorial, best-practices, cicd, github-actions]
 ---
 
 # Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence

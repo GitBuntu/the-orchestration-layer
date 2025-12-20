@@ -2,7 +2,7 @@
 title: Building a Markdown Blog with React, Typescript & Vite on Github Pages
 date: 2025-10-27
 slug: markdown-react-vite
-tags: [react, typescript]
+tags: [artificial-intelligence, infrastructure-as-code, devops, react, typescript, tutorial, automation, github-pages, cicd, github-actions]
 ---
 
 # Building a Markdown Blog with React, Typescript & Vite on Github Pages
