@@ -21,7 +21,7 @@ First, a quick tour of my Azure estate (yes, I built an "estate" for a fax proce
 - **Managed Identities** for passwordless, guilt-free authentication
 - **Log Analytics & Application Insights** to watch it all fail in real-time
 
-![AuthPilot Resources Architecture](resources.png)
+![AuthPilot Resources Architecture](src/posts/resources.png)
 
 Nothing revolutionary. But getting from "let's deploy this" to "it's actually deployed" taught me some valuable lessons.
 
@@ -35,7 +35,7 @@ I started with an ambitious goal: use the `Y1` Consumption plan. Free tier. Mini
 
 My Azure subscription—a free trial because who has budget for infrastructure?—hit a regional quota limit in East US. **Zero** instances available. I wasn't alone; free subscriptions get much tighter quotas than Enterprise Agreement accounts. The error message was delightfully vague: "Regional subscription limit: 0 instances available."
 
-![Deployment Attempt Success](deploymentattempt.png)
+![Deployment Attempt Failures](src/posts/deploymentattempt.png)
 
 ### The Solution
 
