@@ -1,5 +1,17 @@
 [
   {
+    "title": "AuthPilot Fax Processing: Tales from the IaC Trenches",
+    "date": "2025-12-20",
+    "slug": "authpilot-fax-processing-iac",
+    "filename": "authpilot-fax-processing-iac.md",
+    "tags": [
+      "azure",
+      "bicep",
+      "infrastructure-as-code",
+      "lessons-learned"
+    ]
+  },
+  {
     "title": "Building AuthPilot: Automating Healthcare Prior Authorization with Azure Functions and Document Intelligence",
     "date": "2025-12-02",
     "slug": "authpilot-fax-processing",
