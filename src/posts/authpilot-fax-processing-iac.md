@@ -2,7 +2,7 @@
 title: "AuthPilot Fax Processing: Tales from the IaC Trenches"
 date: 2025-12-20
 slug: authpilot-fax-processing-iac
-tags: [azure, bicep, infrastructure-as-code, lessons-learned]
+tags: [artificial-intelligence, infrastructure-as-code, azure, bicep, devops, lessons-learned, best-practices, healthcare, cicd, github-actions]
 ---
 
 # AuthPilot Fax Processing: Tales from the IaC Trenches
