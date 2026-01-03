@@ -1,5 +1,22 @@
 [
   {
+    "title": "AuthPilot Deployment: When Flex Consumption Gets Flexed On",
+    "date": "2025-12-28",
+    "slug": "authpilot-fax-processing-deployment",
+    "filename": "authpilot-fax-processing-deployment.md",
+    "tags": [
+      "artificial-intelligence",
+      "infrastructure-as-code",
+      "devops",
+      "azure",
+      "azure-functions",
+      "document-intelligence",
+      "cicd",
+      "github-actions",
+      "microsoft foundry"
+    ]
+  },
+  {
     "title": "AuthPilot Fax Processing: Tales from the IaC Trenches",
     "date": "2025-12-20",
     "slug": "authpilot-fax-processing-iac",
